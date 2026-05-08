@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1C1410">
+  <meta name="description" content="Warkop di Bondowoso">
+
+  <!-- SEO -->
+  <title>Sudut Singgah — Warkop di Bondowoso</title>
+  <meta name="description" content="Sudut Singgah, warkop di Jl. Kawah Ijen Sukosari Bondowoso. Tempat ngopi nyaman dengan suasana hangat. sudut kecil untuk jeda.">
+  <meta name="keywords" content="warkop bondowoso, kopi bondowoso, sudut singgah, warkop sukosari, kopi sukosari bondowoso">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sudut Singgah — Warkop di Bondowoso">
+  <meta property="og:description" content="sudut kecil untuk jeda. Warkop nyaman di Bondowoso.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-bg.webp">
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231C1410'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='20' font-weight='700' fill='%23C8892A'>S</text></svg>">
+
+  <!-- Schema Markup JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Sudut Singgah",
+    "description": "sudut kecil untuk jeda",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Kawah Ijen, Bengko Anyar, Sukosari Lor",
+      "addressLocality": "Bondowoso",
+      "addressRegion": "Jawa Timur",
+      "postalCode": "68271",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.9480666,
+      "longitude": 113.9674607
+    },
+    "telephone": "+6285738212143",
+    "sameAs": ["https://www.instagram.com/sudutsinggahh"]
+  }
+  </script>
+
+  <!-- Google Fonts (Plus Jakarta Sans — now handles all body + headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="../assets/fonts/Coffee_Town.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="../assets/fonts/Lorestta.otf" as="font" type="font/otf" crossorigin>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Skip to content (accessibility) -->
+  <a href="#main-content" class="skip-link">Langsung ke konten</a>
+
+  <!-- ============================== -->
+  <!-- 1. LOADING SCREEN              -->
+  <!-- ============================== -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-screen__content">
+      <h1 class="loading-screen__wordmark">Sudut Singgah</h1>
+      <p class="loading-screen__subtitle">kopinya lagi diseduh...</p>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- 2. NAVBAR                       -->
+  <!-- ============================== -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__brand">
+        <svg class="navbar__logo" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#1C1410"/>
+          <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#C8892A">S</text>
+        </svg>
+        <span class="navbar__brand-text">Sudut Singgah</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links">
+        <li><a href="#menu" class="navbar__link">Menu</a></li>
+        <li><a href="#about" class="navbar__link">Tentang</a></li>
+        <li><a href="#gallery" class="navbar__link">Galeri</a></li>
+        <li><a href="#location" class="navbar__link">Lokasi</a></li>
+      </ul>
+
+      <!-- Hamburger Button (mobile) -->
+      <button class="navbar__hamburger" id="hamburger-btn" aria-label="Buka menu navigasi">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="navbar__drawer" id="nav-drawer">
+      <ul class="navbar__drawer-links">
+        <li><a href="#menu" class="navbar__drawer-link">Menu</a></li>
+        <li><a href="#about" class="navbar__drawer-link">Tentang</a></li>
+        <li><a href="#gallery" class="navbar__drawer-link">Galeri</a></li>
+        <li><a href="#location" class="navbar__drawer-link">Lokasi</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================== -->
+  <!-- MAIN CONTENT                    -->
+  <!-- ============================== -->
+  <main id="main-content">
+
+    <!-- ============================== -->
+    <!-- 3. HERO SECTION                -->
+    <!-- ============================== -->
+    <section id="hero" class="hero">
+      <div class="hero__bg">
+        <img src="../assets/images/hero-bg.webp" alt="Interior Sudut Singgah, warkop nyaman di Bondowoso" loading="eager">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="hero__label">Warkop · Bondowoso</span>
+        <h1 class="hero__title">Sudut Singgah</h1>
+        <div class="hero__divider"></div>
+        <p class="hero__tagline">sudut kecil untuk jeda</p>
+        <a href="#menu" class="hero__cta btn btn--primary">Lihat Menu</a>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 4. ABOUT SECTION               -->
+    <!-- ============================== -->
+    <section id="about" class="about section">
+      <div class="about__inner container">
+        <div class="about__image-wrapper">
+          <img src="../assets/images/about-bg.webp" alt="Suasana hangat di Sudut Singgah Bondowoso" class="about__image" loading="lazy">
+        </div>
+        <div class="about__text">
+          <span class="section__label">Tentang Kami</span>
+          <h2 class="section__title about__title">Cerita di Balik Sudut Singgah</h2>
+          <p class="about__desc">
+            Sudut Singgah lahir dari keinginan sederhana — menyediakan tempat untuk berhenti sejenak.
+            Di tengah rutinitas yang padat, kadang yang dibutuhkan hanyalah secangkir kopi dan sudut yang tenang.
+            Kami bukan coffee shop mewah, kami adalah warkop — tempat di mana semua orang bisa merasa pulang.
+          </p>
+          <p class="about__desc">
+            Terletak di Jl. Kawah Ijen, Bondowoso, Sudut Singgah hadir dengan suasana hangat dan harga yang
+            bersahabat. Dari kopi tubruk hingga minuman kekinian, semua disajikan dengan rasa yang jujur.
+            Singgahlah, nikmati jedamu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 5. MENU SECTION                -->
+    <!-- ============================== -->
+    <section id="menu" class="menu section">
+      <div class="menu__inner container">
+        <span class="section__label menu__label">Menu Pilihan</span>
+        <h2 class="section__title menu__title">Menu Kami</h2>
+
+        <!-- Tab Kategori -->
+        <div class="menu__tabs" id="menu-tabs" role="tablist">
+          <button class="menu__tab is-active" data-tab="hot" role="tab" aria-selected="true">Hot Menu</button>
+          <button class="menu__tab" data-tab="cold" role="tab" aria-selected="false">Cold Menu</button>
+          <button class="menu__tab" data-tab="specialty" role="tab" aria-selected="false">Specialty Coffee</button>
+          <button class="menu__tab" data-tab="special" role="tab" aria-selected="false">Spesial Drink</button>
+        </div>
+
+        <!-- Kartu Menu Container -->
+        <div class="menu__grid" id="menu-grid" role="tabpanel">
+          <!-- Kartu menu di-render oleh js/menu.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 7. GALLERY SECTION             -->
+    <!-- ============================== -->
+    <section id="gallery" class="gallery section">
+      <div class="gallery__inner container">
+        <h2 class="section__title gallery__title">Galeri</h2>
+        <div class="gallery-bento">
+          <div class="bento-item bento-large">
+            <img src="../assets/images/gallery-1.webp" 
+                 alt="suasana warkop sudut singgah bondowoso" 
+                 loading="lazy">
+            <div class="bento-overlay"><span>Sudut Singgah</span></div>
+          </div>
+          <div class="bento-item">
+            <img src="../assets/images/gallery-2.webp" 
+                 alt="kopi sudut singgah" loading="lazy">
+            <div class="bento-overlay"><span>Kopi Kami</span></div>
+          </div>
+          <div class="bento-item">
+            <img src="../assets/images/gallery-3.webp" 
+                 alt="suasana sudut singgah" loading="lazy">
+            <div class="bento-overlay"><span>Suasana</span></div>
+          </div>
+          <div class="bento-item">
+            <img src="../assets/images/gallery-4.webp" 
+                 alt="momen sudut singgah" loading="lazy">
+            <div class="bento-overlay"><span>Momen</span></div>
+          </div>
+          <div class="bento-item">
+            <img src="../assets/images/gallery-5.webp" 
+                 alt="tempat duduk sudut singgah" loading="lazy">
+            <div class="bento-overlay"><span>Tempat Jeda</span></div>
+          </div>
+          <div class="bento-item">
+            <img src="../assets/images/gallery-6.webp" 
+                 alt="detail sudut singgah" loading="lazy">
+            <div class="bento-overlay"><span>Detail</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 8. SUDUT SINGGAH EXPLORE       -->
+    <!-- ============================== -->
+    <section id="explore" class="explore section">
+      <div class="explore__inner container">
+        <span class="section__label explore__label">Momen &amp; Cerita</span>
+        <h2 class="section__title explore__title">Sudut Singgah Explore</h2>
+        <div class="explore__scroll" id="explore-scroll">
+          <div class="explore__item">
+            <img src="../assets/images/explore-1.webp" alt="Live Music Night di Sudut Singgah" class="explore__img" loading="lazy">
+            <div class="explore__overlay"><span>Live Music Night</span></div>
+          </div>
+          <div class="explore__item">
+            <img src="../assets/images/explore-2.webp" alt="Nonton Bareng di Sudut Singgah" class="explore__img" loading="lazy">
+            <div class="explore__overlay"><span>Nonton Bareng</span></div>
+          </div>
+          <div class="explore__item">
+            <img src="../assets/images/explore-3.webp" alt="Bazar Kopi di Sudut Singgah" class="explore__img" loading="lazy">
+            <div class="explore__overlay"><span>Bazar Kopi</span></div>
+          </div>
+          <div class="explore__item">
+            <img src="../assets/images/explore-4.webp" alt="Workshop Latte Art di Sudut Singgah" class="explore__img" loading="lazy">
+            <div class="explore__overlay"><span>Workshop Latte Art</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 9. LOKASI SECTION              -->
+    <!-- ============================== -->
+    <section id="location" class="location section">
+      <div class="location__inner container">
+        <h2 class="section__title location__title">Temukan Kami</h2>
+        <div class="location__map" id="map"></div>
+        <div class="location__info">
+          <div class="jam-buka">
+            <span class="jam-label">Buka Setiap Hari</span>
+            <div class="jam-divider"></div>
+            <span class="jam-waktu">
+              <i data-lucide="clock" width="16" height="16" style="color: var(--color-emas);"></i>
+              19.00 - 00.00 WIB
+            </span>
+          </div>
+          <p class="location__address">
+            <i class="ph-thin ph-map-pin"></i>
+            Jl. Kawah Ijen, Bengko Anyar, Sukosari Lor, Kec. Sukosari, Kabupaten Bondowoso, Jawa Timur 68271
+          </p>
+          <a href="https://maps.app.goo.gl/ifmitq35PM88cn4W8" target="_blank" rel="noopener noreferrer" class="btn btn--primary location__btn">
+            Buka di Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== -->
+  <!-- 10. FOOTER                      -->
+  <!-- ============================== -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__grid">
+        <!-- Kolom 1: Brand -->
+        <div class="footer__col footer__col--brand">
+          <span class="footer__wordmark">Sudut Singgah</span>
+          <p class="footer__tagline">sudut kecil untuk jeda</p>
+          <p class="footer__desc">Warkop nyaman di Bondowoso. Tempat singgah untuk menikmati kopi dan jeda dari rutinitas.</p>
+        </div>
+        <!-- Kolom 2: Informasi -->
+        <div class="footer__col">
+          <h4 class="footer__col-title">Informasi</h4>
+          <div class="footer__info-item">
+            <i data-lucide="clock" class="footer__info-icon"></i>
+            <span>Setiap hari, 19.00 — 00.00 WIB</span>
+          </div>
+          <div class="footer__info-item">
+            <i class="ph-thin ph-map-pin footer__info-icon"></i>
+            <span>Jl. Kawah Ijen, Bondowoso</span>
+          </div>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/sudutsinggahh" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram Sudut Singgah">
+              <i class="ph-thin ph-instagram-logo"></i>
+            </a>
+            <a href="https://wa.me/6285738212143" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp Sudut Singgah">
+              <i class="ph-thin ph-whatsapp-logo"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copy">&copy; 2025 Sudut Singgah</p>
+    </div>
+  </footer>
+
+  <!-- ============================== -->
+  <!-- 6. CART DRAWER                  -->
+  <!-- ============================== -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer__backdrop" id="cart-backdrop"></div>
+    <div class="cart-drawer__panel">
+      <div class="cart-drawer__header">
+        <h3 class="cart-drawer__title">Pesanan Kamu</h3>
+        <button class="cart-drawer__close" id="cart-close-btn" aria-label="Tutup keranjang">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="cart-drawer__body" id="cart-body">
+        <!-- Item keranjang di-render oleh js/cart.js -->
+        <p class="cart-drawer__empty" id="cart-empty">Belum ada pesanan</p>
+      </div>
+      <div class="cart-drawer__footer" id="cart-footer">
+        <div class="cart-drawer__total">
+          <span>Total</span>
+          <span id="cart-total">Rp 0</span>
+        </div>
+        <button class="btn btn--primary cart-drawer__order-btn" id="cart-order-btn">
+          <i class="ph-thin ph-whatsapp-logo"></i>
+          Pesan via WhatsApp
+        </button>
+        <button class="btn btn--outline cart-drawer__cancel-btn" id="cart-cancel-btn">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Buttons -->
+  <div class="float-buttons">
+    <button class="float-btn float-backtotop back-to-top" 
+            id="back-to-top" 
+            aria-label="Kembali ke atas">
+      <i data-lucide="arrow-up"></i>
+    </button>
+
+    <div class="wa-float">
+      <span class="wa-float-label">Pesan via WhatsApp</span>
+      <button class="float-btn wa-float-btn" 
+              id="cart-fab"
+              aria-label="Pesan via WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+        <span class="cart-fab__badge" id="cart-badge">0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- SCREENSAVER                     -->
+  <!-- ============================== -->
+  <div class="screensaver" id="screensaver">
+    <div id="screensaver-content">
+      <div id="cup-container">
+        <svg width="120" height="140" viewBox="0 0 90 110" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 32 Q18 58 17 76 Q17 84 24 86 L66 86 Q73 84 73 76 Q72 58 70 32 Z" fill="none" stroke="#C8892A" stroke-width="1.5"/>
+          <ellipse cx="45" cy="32" rx="25" ry="5.5" fill="none" stroke="#C8892A" stroke-width="1.5"/>
+          <ellipse cx="45" cy="32" rx="18" ry="3.5" fill="#C8892A" fill-opacity="0.15" stroke="none"/>
+          <path d="M73 48 Q84 47 85 55 Q86 65 78 68 Q75 69 73 68" fill="none" stroke="#C8892A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M75 55 Q78 55 78 58 Q78 61 75 62" fill="none" stroke="#C8892A" stroke-width="0.8" stroke-linecap="round"/>
+          <path d="M17 87 Q17 93 23 94 L67 94 Q73 93 73 87" fill="none" stroke="#C8892A" stroke-width="1.2"/>
+          <ellipse cx="45" cy="94" rx="30" ry="4.5" fill="none" stroke="#C8892A" stroke-width="1.2"/>
+          <path d="M27 96 L22 104 L68 104 L63 96" fill="none" stroke="#C8892A" stroke-width="1"/>
+          <ellipse cx="45" cy="104" rx="24" ry="3" fill="none" stroke="#C8892A" stroke-width="0.8"/>
+
+          <!-- Animasi uap kopi — 3 path naik dan fade bergantian -->
+          <path id="steam1" d="M36 20 Q34 10 37 0" fill="none" stroke="#D4C5A9" stroke-width="2" stroke-linecap="round" opacity="0">
+            <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" begin="0s"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,-16" dur="2.5s" repeatCount="indefinite" begin="0s"/>
+          </path>
+          <path id="steam2" d="M45 21 Q48 9 44 -2" fill="none" stroke="#D4C5A9" stroke-width="2" stroke-linecap="round" opacity="0">
+            <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,-16" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
+          </path>
+          <path id="steam3" d="M54 20 Q52 8 56 -1" fill="none" stroke="#D4C5A9" stroke-width="2" stroke-linecap="round" opacity="0">
+            <animate attributeName="opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" begin="1.6s"/>
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,-16" dur="2.5s" repeatCount="indefinite" begin="1.6s"/>
+          </path>
+        </svg>
+      </div>
+      <div class="screensaver__words" id="steam-words">
+        <span class="screensaver__word">jeda</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- SCRIPTS (CDN)                   -->
+  <!-- ============================== -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll (disabled — removed to save ~40KB) -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- App Scripts (urutan penting) -->
+  <script src="js/loading.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/screensaver.js"></script>
+
+</body>
+</html>
