@@ -88,7 +88,10 @@
           <rect width="32" height="32" rx="6" fill="#1C1410"/>
           <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#C8892A">S</text>
         </svg>
-        <span class="navbar__brand-text">Sudut Singgah</span>
+        <div class="navbar__brand-text-wrapper">
+          <span class="navbar__brand-text">SUDUT SINGGAH</span>
+          <span class="navbar__tagline">sudut kecil untuk jeda</span>
+        </div>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -127,36 +130,62 @@
     <!-- 3. HERO SECTION                -->
     <!-- ============================== -->
     <section id="hero" class="hero">
-      <div class="hero__bg">
-        <img src="../assets/images/hero-bg.webp" alt="Interior Sudut Singgah, warkop nyaman di Bondowoso" loading="eager">
-      </div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <span class="hero__label">Warkop · Bondowoso</span>
-        <h1 class="hero__title">Sudut Singgah</h1>
-        <div class="hero__divider"></div>
-        <p class="hero__tagline">sudut kecil untuk jeda</p>
-        <a href="#menu" class="hero__cta btn btn--primary">Lihat Menu</a>
+      <div class="hero-content">
+        <div class="hero-left">
+          <span class="hero-label">Warkop · Bondowoso</span>
+          <h1 class="hero-title">
+            Sudut<br>Singgah
+          </h1>
+          <div class="hero-divider"></div>
+          <p class="hero-desc">
+            Di tengah hiruk pikuk hari yang panjang, 
+            selalu ada sudut kecil yang menunggumu 
+            untuk singgah, duduk sebentar, pesan kopi, 
+            dan biarkan waktu berjalan lebih pelan. 
+            Sudut Singgah hadir dengan suasana hangat 
+            dan sederhana untuk menemanimu melepas penat.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-primary">Lihat Menu</a>
+            <a href="#about" class="btn-secondary">Tentang Kami</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-image-wrapper">
+            <img src="../assets/images/hero-bg.webp" 
+                 alt="barista sudut singgah bondowoso"
+                 class="hero-image" loading="eager">
+            <div class="hero-blur-edge"></div>
+            <div class="hero-image-fade"></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================== -->
     <!-- 4. ABOUT SECTION               -->
     <!-- ============================== -->
-    <section id="about" class="about section">
+    <section id="about" class="about-section section">
+      <div class="about-deco-text">SINGGAH</div>
       <div class="about__inner container">
-        <div class="about__image-wrapper">
-          <img src="../assets/images/about-bg.webp" alt="Suasana hangat di Sudut Singgah Bondowoso" class="about__image" loading="lazy">
+        <div class="about-image-wrapper">
+          <img src="../assets/images/about-bg.webp" alt="Suasana hangat di Sudut Singgah Bondowoso" class="about-image" loading="lazy">
         </div>
-        <div class="about__text">
-          <span class="section__label">Tentang Kami</span>
-          <h2 class="section__title about__title">Cerita di Balik Sudut Singgah</h2>
-          <p class="about__desc">
+        <div class="about-content">
+          <div class="about-label-wrap">
+            <span class="about-label">Tentang Kami</span>
+          </div>
+          <h2 class="about-title">Cerita di Balik<br>Sudut Singgah</h2>
+          <div class="about-quote">
+            "Singgahlah sebentar,<br>biarkan kopi yang bicara."
+          </div>
+          <div class="about-divider"></div>
+          <p class="about-desc">
             Sudut Singgah lahir dari keinginan sederhana — menyediakan tempat untuk berhenti sejenak.
             Di tengah rutinitas yang padat, kadang yang dibutuhkan hanyalah secangkir kopi dan sudut yang tenang.
-            Kami bukan coffee shop mewah, kami adalah warkop — tempat di mana semua orang bisa merasa pulang.
+            Kami bukan coffee shop mewah, kami adalah warkop, tempat di mana semua orang bisa merasa nyaman.
           </p>
-          <p class="about__desc">
+          <p class="about-desc">
             Terletak di Jl. Kawah Ijen, Bondowoso, Sudut Singgah hadir dengan suasana hangat dan harga yang
             bersahabat. Dari kopi tubruk hingga minuman kekinian, semua disajikan dengan rasa yang jujur.
             Singgahlah, nikmati jedamu.
@@ -261,28 +290,52 @@
     <!-- ============================== -->
     <!-- 9. LOKASI SECTION              -->
     <!-- ============================== -->
-    <section id="location" class="location section">
-      <div class="location__inner container">
-        <h2 class="section__title location__title">Temukan Kami</h2>
-        <div class="location__map" id="map"></div>
-        <div class="location__info">
-          <div class="jam-buka">
-            <span class="jam-label">Buka Setiap Hari</span>
-            <div class="jam-divider"></div>
-            <span class="jam-waktu">
-              <i data-lucide="clock" width="16" height="16" style="color: var(--color-emas);"></i>
-              19.00 - 00.00 WIB
-            </span>
+    <section class="lokasi-section" id="lokasi">
+      <div class="lokasi-container">
+        <div class="lokasi-left">
+          <div class="lokasi-map-wrapper">
+            <div id="map"></div>
           </div>
-          <p class="location__address">
-            <i class="ph-thin ph-map-pin"></i>
-            Jl. Kawah Ijen, Bengko Anyar, Sukosari Lor, Kec. Sukosari, Kabupaten Bondowoso, Jawa Timur 68271
-          </p>
-          <a href="https://maps.app.goo.gl/ifmitq35PM88cn4W8" target="_blank" rel="noopener noreferrer" class="btn btn--primary location__btn">
-            Buka di Google Maps
-          </a>
+        </div>
+        <div class="lokasi-right">
+          <div class="lokasi-label-wrap">
+            <span class="lokasi-label">Lokasi Kami</span>
+          </div>
+          <h2 class="lokasi-title">Temukan<br>Kami</h2>
+          <div class="lokasi-info-card">
+            <div class="lokasi-info-item">
+              <i data-lucide="clock" class="lokasi-icon"></i>
+              <div>
+                <span class="lokasi-info-label">Jam Buka</span>
+                <span class="lokasi-info-value">
+                  Setiap Hari · 19.00 — 00.00 WIB
+                </span>
+              </div>
+            </div>
+            <div class="lokasi-divider"></div>
+            <div class="lokasi-info-item">
+              <i data-lucide="map-pin" class="lokasi-icon"></i>
+              <div>
+                <span class="lokasi-info-label">Alamat</span>
+                <span class="lokasi-info-value">
+                  Jl. Kawah Ijen, Bengko Anyar,
+                  Sukosari Lor, Kec. Sukosari,
+                  Bondowoso, Jawa Timur 68271
+                </span>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/ifmitq35PM88cn4W8" 
+               target="_blank" 
+               class="lokasi-cta">
+              <i data-lucide="navigation"></i>
+              Buka di Google Maps
+            </a>
+          </div>
         </div>
       </div>
+
+      <!-- Dekorasi teks watermark -->
+      <div class="lokasi-deco-text">BONDOWOSO</div>
     </section>
 
   </main>

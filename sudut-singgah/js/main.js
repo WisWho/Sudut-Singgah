@@ -58,20 +58,27 @@
 
     /* --- Hero Stagger Animation (setelah loading selesai) --- */
     function animateHero() {
-      var heroElements = [
-        '.hero__label',
-        '.hero__title',
-        '.hero__divider',
-        '.hero__tagline',
-        '.hero__cta',
-      ];
-
-      gsap.from(heroElements.join(', '), {
-        y: 40,
+      gsap.from([
+        '.hero-label',
+        '.hero-title',
+        '.hero-divider',
+        '.hero-desc',
+        '.hero-buttons'
+      ], {
         opacity: 0,
+        y: 30,
         duration: 0.8,
-        stagger: 0.12,
+        stagger: 0.15,
         ease: 'power2.out',
+        delay: 0.3
+      });
+
+      gsap.from('.hero-right', {
+        opacity: 0,
+        x: 30,
+        duration: 1.2,
+        ease: 'power2.out',
+        delay: 0.2
       });
     }
 
