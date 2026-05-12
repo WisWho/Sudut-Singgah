@@ -11,36 +11,36 @@
   /* --- Data Menu --- */
   var menuData = {
     hot: [
-      { nama: 'Kopi Hitam', harga: 4000 },
-      { nama: 'Kopi Susu', harga: 4000 },
-      { nama: 'Kopi Gula Aren', harga: 4000 },
-      { nama: 'White Coffee', harga: 4000 },
-      { nama: 'Cappuccino', harga: 4000 },
-      { nama: 'Chocolatos', harga: 4000 },
-      { nama: 'Susu Jahe', harga: 4000 },
-      { nama: 'Susu Hangat', harga: 4000 },
-      { nama: 'Milo', harga: 5000 },
+      { nama: 'Kopi Hitam', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Kopi seduh asli dengan cita rasa pekat dan aroma kuat.' },
+      { nama: 'Kopi Susu', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Perpaduan kopi dan susu kental manis yang pas.' },
+      { nama: 'Kopi Gula Aren', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Manisnya gula aren asli bercampur dengan kopi.' },
+      { nama: 'White Coffee', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Kopi instan lembut untuk menemani santai.' },
+      { nama: 'Cappuccino', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Kopi dengan busa lembut yang menghangatkan.' },
+      { nama: 'Chocolatos', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Cokelat panas yang kental dan manis.' },
+      { nama: 'Susu Jahe', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Kehangatan ekstra dari campuran susu dan jahe asli.' },
+      { nama: 'Susu Hangat', harga: 4000, kategori: 'Hot Menu', deskripsi: 'Susu putih hangat penenang pikiran.' },
+      { nama: 'Milo', harga: 5000, kategori: 'Hot Menu', deskripsi: 'Minuman cokelat malt khas kesukaan semua.' },
     ],
     cold: [
-      { nama: 'Ice Coffee', harga: 5000 },
-      { nama: 'Joshua', harga: 5000 },
-      { nama: 'Kopi Susu', harga: 5000 },
-      { nama: 'Kopi Gula Aren', harga: 5000 },
-      { nama: 'White Coffee', harga: 5000 },
-      { nama: 'Cappuccino', harga: 5000 },
-      { nama: 'Chocolatos', harga: 5000 },
-      { nama: 'Milo', harga: 5000 },
+      { nama: 'Ice Coffee', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Kopi hitam dingin penyegar dahaga.' },
+      { nama: 'Joshua', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Minuman segar dengan campuran rasa spesial.' },
+      { nama: 'Kopi Susu', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Es kopi susu yang manis dan segar.' },
+      { nama: 'Kopi Gula Aren', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Es kopi dengan sirup gula aren asli.' },
+      { nama: 'White Coffee', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Es white coffee manis menyegarkan.' },
+      { nama: 'Cappuccino', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Es cappuccino dengan kesegaran maksimal.' },
+      { nama: 'Chocolatos', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Cokelat dingin yang selalu jadi andalan.' },
+      { nama: 'Milo', harga: 5000, kategori: 'Cold Menu', deskripsi: 'Es Milo dingin penuh energi.' },
     ],
     specialty: [
-      { nama: 'Tubruk Arabica', harga: 6000 },
-      { nama: 'Tubruk Robusta', harga: 6000 },
+      { nama: 'Tubruk Arabica', harga: 6000, kategori: 'Specialty', deskripsi: 'Kopi tubruk khas dengan notes asam Arabica.' },
+      { nama: 'Tubruk Robusta', harga: 6000, kategori: 'Specialty', deskripsi: 'Sensasi kopi tubruk yang tebal dan pekat.' },
     ],
     special: [
-      { nama: 'Taro Singgah', harga: 8000 },
-      { nama: 'Choco Beng', harga: 8000 },
-      { nama: 'Miloreo Crunch', harga: 8000 },
-      { nama: 'Coffee Latte', harga: 8000 },
-      { nama: 'Aren Coffee', harga: 8000 },
+      { nama: 'Taro Singgah', harga: 8000, kategori: 'Special Drink', deskripsi: 'Minuman manis rasa taro yang creamy.' },
+      { nama: 'Choco Beng', harga: 8000, kategori: 'Special Drink', deskripsi: 'Kreasi cokelat eksklusif dengan topping renyah.' },
+      { nama: 'Miloreo Crunch', harga: 8000, kategori: 'Special Drink', deskripsi: 'Paduan Milo dan Oreo yang crunchy.' },
+      { nama: 'Coffee Latte', harga: 8000, kategori: 'Special Drink', deskripsi: 'Espresso dengan paduan susu segar yang gurih.' },
+      { nama: 'Aren Coffee', harga: 8000, kategori: 'Special Drink', deskripsi: 'Racikan andalan es kopi susu gula aren premium.' },
     ],
   };
 
@@ -86,10 +86,14 @@
           card.classList.add('hidden-item');
         }
         card.innerHTML =
-          '<img src="../assets/images/menu-placeholder.webp" alt="' + item.nama + '" class="menu__card-img" loading="lazy">' +
-          '<div class="menu__card-body">' +
-            '<span class="menu__card-name">' + item.nama + '</span>' +
-            '<div class="menu__card-right">' +
+          '<div class="menu__card-image">' +
+            '<img src="../assets/images/menu-placeholder.webp" alt="' + item.nama + '" class="menu__card-img" loading="lazy">' +
+            '<span class="menu__card-badge">' + item.kategori + '</span>' +
+          '</div>' +
+          '<div class="menu__card-content">' +
+            '<h3 class="menu__card-name">' + item.nama + '</h3>' +
+            '<p class="menu__card-desc">' + item.deskripsi + '</p>' +
+            '<div class="menu__card-footer">' +
               '<span class="menu__card-price">' + formatHarga(item.harga) + '</span>' +
               '<button class="menu__card-add" data-nama="' + item.nama + '" data-harga="' + item.harga + '" aria-label="Tambah ' + item.nama + '">+</button>' +
             '</div>' +
