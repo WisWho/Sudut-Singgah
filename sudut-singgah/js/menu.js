@@ -95,11 +95,15 @@
             '<p class="menu__card-desc">' + item.deskripsi + '</p>' +
             '<div class="menu__card-footer">' +
               '<span class="menu__card-price">' + formatHarga(item.harga) + '</span>' +
-              '<button class="menu__card-add" data-nama="' + item.nama + '" data-harga="' + item.harga + '" aria-label="Tambah ' + item.nama + '">+</button>' +
+              '<button class="menu__card-add" data-nama="' + item.nama + '" data-harga="' + item.harga + '" aria-label="Tambah ' + item.nama + '">' +
+                '<i data-lucide="plus" style="width:16px;height:16px;"></i>' +
+              '</button>' +
             '</div>' +
           '</div>';
         menuGrid.appendChild(card);
       });
+
+      if (typeof lucide !== 'undefined') lucide.createIcons();
 
       // Handle "Selengkapnya" button
       var existingBtnContainer = document.getElementById('menu-more-container');

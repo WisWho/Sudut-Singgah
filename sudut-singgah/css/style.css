@@ -877,9 +877,11 @@ button, a, [role="tab"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
   flex-shrink: 0;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
   transition: transform 0.2s var(--ease-out), background 0.2s ease;
 }
 .menu__card-add:hover { background: var(--color-krem); }
