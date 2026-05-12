@@ -87,7 +87,7 @@
         }
         card.innerHTML =
           '<div class="menu__card-image">' +
-            '<img src="../assets/images/menu-placeholder.webp" alt="' + item.nama + '" class="menu__card-img" loading="lazy">' +
+            '<img src="assets/images/menu-placeholder.webp" alt="' + item.nama + '" class="menu__card-img" loading="lazy">' +
             '<span class="menu__card-badge">' + item.kategori + '</span>' +
           '</div>' +
           '<div class="menu__card-content">' +
