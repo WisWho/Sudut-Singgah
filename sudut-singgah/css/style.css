@@ -123,6 +123,8 @@ button, a, [role="tab"] {
 
 .section { padding: 80px var(--layout-padding-x); }
 
+.font-brand { font-family: var(--font-brand); }
+
 .section__label {
   display: block;
   font-family: var(--font-body);
@@ -535,8 +537,9 @@ button, a, [role="tab"] {
   position: absolute;
   bottom: -20px;
   right: -20px;
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 180px;
+  font-weight: 800;
   color: #C8892A;
   opacity: 0.15;
   line-height: 1;
@@ -619,14 +622,15 @@ button, a, [role="tab"] {
   color: #C8892A;
 }
 .about-title {
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 42px;
+  font-weight: 700;
   color: #1C1410;
   line-height: 1.15;
   margin-bottom: 24px;
 }
 .about-quote {
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 20px;
   color: #6B4226;
   line-height: 1.5;
@@ -679,7 +683,7 @@ button, a, [role="tab"] {
 
 /* Decorative section divider — subtle gold line */
 .menu::before,
-.explore::before {
+.event-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -945,7 +949,8 @@ button, a, [role="tab"] {
 
 .bento-overlay span {
   color: #F5F0E8;
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 16px;
   opacity: 0;
   transform: translateY(8px);
@@ -979,65 +984,243 @@ button, a, [role="tab"] {
 }
 
 /* ================================
-   8. EXPLORE SECTION
+   8. EVENT SECTION (Polaroid Swiper)
    ================================ */
-.explore {
+.event-section {
   background: var(--color-arang);
   position: relative;
-}
-
-.explore__title { color: var(--color-kertas); }
-
-.explore__scroll {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
-}
-.explore__scroll::-webkit-scrollbar { display: none; }
-
-.explore__item {
-  flex: 0 0 280px;
-  scroll-snap-align: start;
-  position: relative;
-  border-radius: var(--radius-md);
   overflow: hidden;
+}
+
+.event-container {
+  position: relative;
+  z-index: 1;
+}
+
+.event-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.event-label-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.event-label-wrap::before,
+.event-label-wrap::after {
+  content: '';
+  width: 32px;
+  height: 1.5px;
+  background: #C8892A;
+}
+.event-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C8892A;
+}
+
+.event-title {
+  font-family: var(--font-body);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--color-kertas);
+  line-height: 1.15;
+}
+
+/* Swiper container */
+.event-swiper {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Polaroid Card */
+.polaroid {
+  background: var(--color-kertas);
+  padding: 12px 12px 48px 12px;
+  border-radius: 2px;
   cursor: pointer;
-  transition: transform var(--duration-fast) var(--ease-out);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
-.explore__img {
+.polaroid:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.polaroid-img-wrap {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-out);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--color-kayu);
 }
 
-.explore__item:hover .explore__img { transform: scale(1.05); }
-.explore__item:active { transform: scale(0.98); }
+.polaroid-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-.explore__overlay {
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-arang);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.3;
+}
+
+/* Nav buttons */
+.event-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.event-prev,
+.event-next {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 137, 42, 0.4);
+  background: transparent;
+  color: #C8892A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+
+.event-prev:hover,
+.event-next:hover {
+  background: rgba(200, 137, 42, 0.15);
+  border-color: #C8892A;
+}
+
+.event-prev:active,
+.event-next:active {
+  transform: scale(0.92);
+}
+
+/* Watermark */
+.event-deco-text {
   position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: var(--font-body);
+  font-size: 180px;
+  font-weight: 800;
+  color: #C8892A;
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
   inset: 0;
-  background: rgba(28, 20, 16, 0.6);
+  z-index: 9000;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.explore__item:hover .explore__overlay,
-.explore__overlay.is-tapped { opacity: 1; }
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
 
-.explore__overlay span {
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.is-open .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.lightbox-caption {
   font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-kertas);
+  font-size: 16px;
+  font-weight: 500;
+  color: #F5F0E8;
+  margin-top: 16px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  color: #F5F0E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #C8892A;
+}
+
+@media (max-width: 767px) {
+  .event-section {
+    padding: 80px 24px;
+  }
+  .event-title {
+    font-size: 32px;
+  }
+  .event-swiper {
+    width: 260px;
+  }
+  .event-deco-text {
+    font-size: 80px;
+    bottom: -20px;
+  }
 }
 
 /* ================================
@@ -1131,8 +1314,9 @@ button, a, [role="tab"] {
 }
 
 .lokasi-title {
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 42px;
+  font-weight: 700;
   color: #1C1410;
   line-height: 1.15;
   margin-bottom: 32px;
@@ -1218,8 +1402,9 @@ button, a, [role="tab"] {
   position: absolute;
   bottom: -15px;
   left: -15px;
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 160px;
+  font-weight: 800;
   color: #C8892A;
   opacity: 0.15;
   line-height: 1;
@@ -1292,7 +1477,7 @@ button, a, [role="tab"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Grold', serif;
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 700;
   flex-shrink: 0;
@@ -1758,11 +1943,7 @@ button, a, [role="tab"] {
 
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-  .explore__item { flex: 0 0 340px; }
-  .explore__img { height: 380px; }
-
-
-
+  .event-swiper { width: 340px; }
 }
 
 /* Desktop */
@@ -1793,8 +1974,7 @@ button, a, [role="tab"] {
   .gallery__grid { gap: 20px; }
   .gallery__overlay span { font-size: 20px; }
 
-  .explore__item { flex: 0 0 380px; }
-  .explore__img { height: 420px; }
+  .event-swiper { width: 380px; }
 
 
   /* Cart drawer from right on desktop */

@@ -140,9 +140,26 @@
       ease: 'power2.out',
     });
 
-    // Explore section
-    gsap.from('.explore__label, .explore__title', {
-      scrollTrigger: { trigger: '.explore', start: 'top 85%' },
+    // Event section (Swiper + Lightbox)
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.event-swiper', {
+        effect: 'cards',
+        grabCursor: true,
+        cardsEffect: {
+          perSlideOffset: 12,
+          perSlideRotate: 8,
+          rotate: true,
+          slideShadows: true,
+        },
+        navigation: {
+          nextEl: '.event-next',
+          prevEl: '.event-prev',
+        },
+      });
+    }
+
+    gsap.from('.event-label, .event-title', {
+      scrollTrigger: { trigger: '.event-section', start: 'top 85%' },
       y: 40,
       opacity: 0,
       duration: 0.8,
@@ -150,14 +167,62 @@
       ease: 'power2.out',
     });
 
-    gsap.from('.explore__item', {
-      scrollTrigger: { trigger: '.explore__scroll', start: 'top 85%' },
-      x: 60,
+    gsap.from('.event-swiper', {
+      scrollTrigger: { trigger: '.event-section', start: 'top 80%' },
+      y: 60,
       opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
+      duration: 0.8,
+      delay: 0.2,
       ease: 'power2.out',
     });
+
+    gsap.from('.event-nav', {
+      scrollTrigger: { trigger: '.event-section', start: 'top 75%' },
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.4,
+      ease: 'power2.out',
+    });
+
+    // Lightbox
+    var lightbox = document.getElementById('event-lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxCaption = document.getElementById('lightbox-caption');
+    var lightboxBackdrop = document.getElementById('lightbox-backdrop');
+    var lightboxClose = document.getElementById('lightbox-close');
+
+    function openLightbox(src, alt, caption) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    if (lightbox) {
+      document.querySelectorAll('.polaroid').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var img = card.querySelector('img');
+          var caption = card.getAttribute('data-caption') || '';
+          if (img) openLightbox(img.src, img.alt, caption);
+        });
+      });
+
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+    }
 
     // Location section
     gsap.from('.location__title, .location__map, .location__info', {

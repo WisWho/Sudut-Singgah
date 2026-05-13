@@ -50,15 +50,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Google Fonts: Caveat (handwriting untuk caption Polaroid) -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Preload critical fonts -->
-  <link rel="preload" href="../assets/fonts/Coffee_Town.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="../assets/fonts/Lorestta.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/Coffee_Town.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/Lorestta.otf" as="font" type="font/otf" crossorigin>
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -147,7 +153,7 @@
           </div>
         </div>
         <div class="hero-right">
-          <img src="../assets/images/hero-bg.webp" 
+          <img src="assets/images/hero-bg.webp" 
                alt="barista sudut singgah bondowoso"
                class="hero-image" loading="eager">
           <div class="hero-fade"></div>
@@ -163,13 +169,13 @@
       <div class="about-deco-text">SINGGAH</div>
       <div class="about__inner container">
         <div class="about-image-wrapper">
-          <img src="../assets/images/about-bg.webp" alt="Suasana hangat di Sudut Singgah Bondowoso" class="about-image" loading="lazy">
+          <img src="assets/images/about-bg.webp" alt="Suasana hangat di Sudut Singgah Bondowoso" class="about-image" loading="lazy">
         </div>
         <div class="about-content">
           <div class="about-label-wrap">
             <span class="about-label">Tentang Kami</span>
           </div>
-          <h2 class="about-title">Cerita di Balik<br>Sudut Singgah</h2>
+          <h2 class="about-title">Cerita di Balik<br><span class="font-brand">Sudut Singgah</span></h2>
           <div class="about-quote">
             "Singgahlah sebentar,<br>biarkan kopi yang bicara."
           </div>
@@ -219,33 +225,33 @@
         <h2 class="section__title gallery__title">Galeri</h2>
         <div class="gallery-bento">
           <div class="bento-item bento-large">
-            <img src="../assets/images/gallery-1.webp" 
+            <img src="assets/images/gallery-1.webp" 
                  alt="suasana warkop sudut singgah bondowoso" 
                  loading="lazy">
             <div class="bento-overlay"><span>Sudut Singgah</span></div>
           </div>
           <div class="bento-item">
-            <img src="../assets/images/gallery-2.webp" 
+            <img src="assets/images/gallery-2.webp" 
                  alt="kopi sudut singgah" loading="lazy">
             <div class="bento-overlay"><span>Kopi Kami</span></div>
           </div>
           <div class="bento-item">
-            <img src="../assets/images/gallery-3.webp" 
+            <img src="assets/images/gallery-3.webp" 
                  alt="suasana sudut singgah" loading="lazy">
             <div class="bento-overlay"><span>Suasana</span></div>
           </div>
           <div class="bento-item">
-            <img src="../assets/images/gallery-4.webp" 
+            <img src="assets/images/gallery-4.webp" 
                  alt="momen sudut singgah" loading="lazy">
             <div class="bento-overlay"><span>Momen</span></div>
           </div>
           <div class="bento-item">
-            <img src="../assets/images/gallery-5.webp" 
+            <img src="assets/images/gallery-5.webp" 
                  alt="tempat duduk sudut singgah" loading="lazy">
             <div class="bento-overlay"><span>Tempat Jeda</span></div>
           </div>
           <div class="bento-item">
-            <img src="../assets/images/gallery-6.webp" 
+            <img src="assets/images/gallery-6.webp" 
                  alt="detail sudut singgah" loading="lazy">
             <div class="bento-overlay"><span>Detail</span></div>
           </div>
@@ -254,32 +260,77 @@
     </section>
 
     <!-- ============================== -->
-    <!-- 8. SUDUT SINGGAH EXPLORE       -->
+    <!-- 8. EVENT SECTION                -->
     <!-- ============================== -->
-    <section id="explore" class="explore section">
-      <div class="explore__inner container">
-        <span class="section__label explore__label">Momen &amp; Cerita</span>
-        <h2 class="section__title explore__title">Sudut Singgah Explore</h2>
-        <div class="explore__scroll" id="explore-scroll">
-          <div class="explore__item">
-            <img src="../assets/images/explore-1.webp" alt="Live Music Night di Sudut Singgah" class="explore__img" loading="lazy">
-            <div class="explore__overlay"><span>Live Music Night</span></div>
+    <section id="event" class="event-section section">
+      <div class="event-deco-text">EVENT</div>
+      <div class="event-container container">
+        <div class="event-header">
+          <div class="event-label-wrap">
+            <span class="event-label">Momen &amp; Cerita</span>
           </div>
-          <div class="explore__item">
-            <img src="../assets/images/explore-2.webp" alt="Nonton Bareng di Sudut Singgah" class="explore__img" loading="lazy">
-            <div class="explore__overlay"><span>Nonton Bareng</span></div>
+          <h2 class="event-title"><span class="font-brand">Sudut Singgah</span> Event</h2>
+        </div>
+
+        <div class="swiper event-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="polaroid" data-caption="Sudut Singgah Explore">
+                <div class="polaroid-img-wrap">
+                  <img src="assets/images/explore-1.webp" alt="Sudut Singgah Explore" loading="lazy">
+                </div>
+                <div class="polaroid-caption">Sudut Singgah Explore</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="polaroid" data-caption="Nonton Bareng">
+                <div class="polaroid-img-wrap">
+                  <img src="assets/images/explore-2.webp" alt="Nonton Bareng di Sudut Singgah" loading="lazy">
+                </div>
+                <div class="polaroid-caption">Nonton Bareng</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="polaroid" data-caption="Bazar Kopi">
+                <div class="polaroid-img-wrap">
+                  <img src="assets/images/explore-3.webp" alt="Bazar Kopi di Sudut Singgah" loading="lazy">
+                </div>
+                <div class="polaroid-caption">Bazar Kopi</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="polaroid" data-caption="Workshop Latte Art">
+                <div class="polaroid-img-wrap">
+                  <img src="assets/images/explore-4.webp" alt="Workshop Latte Art di Sudut Singgah" loading="lazy">
+                </div>
+                <div class="polaroid-caption">Workshop Latte Art</div>
+              </div>
+            </div>
           </div>
-          <div class="explore__item">
-            <img src="../assets/images/explore-3.webp" alt="Bazar Kopi di Sudut Singgah" class="explore__img" loading="lazy">
-            <div class="explore__overlay"><span>Bazar Kopi</span></div>
-          </div>
-          <div class="explore__item">
-            <img src="../assets/images/explore-4.webp" alt="Workshop Latte Art di Sudut Singgah" class="explore__img" loading="lazy">
-            <div class="explore__overlay"><span>Workshop Latte Art</span></div>
-          </div>
+        </div>
+
+        <div class="event-nav">
+          <button class="event-prev" aria-label="Event sebelumnya">
+            <i data-lucide="arrow-left" style="width:20px;height:20px;"></i>
+          </button>
+          <button class="event-next" aria-label="Event berikutnya">
+            <i data-lucide="arrow-right" style="width:20px;height:20px;"></i>
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- Lightbox Popup -->
+    <div class="lightbox" id="event-lightbox">
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Tutup">
+          <i data-lucide="x" style="width:24px;height:24px;"></i>
+        </button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
 
     <!-- ============================== -->
     <!-- 9. LOKASI SECTION              -->
@@ -488,6 +539,9 @@
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Lenis Smooth Scroll (disabled — removed to save ~40KB) -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->

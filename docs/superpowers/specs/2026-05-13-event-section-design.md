@@ -350,3 +350,35 @@ Ditambahkan di `index.html`:
 - Responsive mobile: section, kartu, dan lightbox tampil baik
 - GSAP scroll animation berfungsi untuk section event
 - Tidak ada error di console
+
+---
+
+## 7. Panduan Maintenance
+
+### Menambah Event Baru
+
+1. Taruh file gambar di `sudut-singgah/assets/images/` (format `.webp` direkomendasikan)
+2. Buka `sudut-singgah/index.html`, cari section `#event`
+3. Di dalam `<div class="swiper-wrapper">`, tambah slide baru:
+
+```html
+<div class="swiper-slide">
+  <div class="polaroid">
+    <div class="polaroid-img-wrap">
+      <img src="assets/images/nama-file.webp" 
+           alt="Deskripsi event" loading="lazy">
+    </div>
+    <div class="polaroid-caption">Judul Event</div>
+  </div>
+</div>
+```
+
+4. Selesai. Tidak perlu ubah JS atau CSS.
+
+### Menghapus Event
+
+Hapus `<div class="swiper-slide">...</div>` yang sesuai dari HTML. Minimum 2 slide agar efek cards terlihat baik.
+
+### Mengganti Gambar Event
+
+Ganti atribut `src` pada `<img>` dan update `alt` text-nya.
