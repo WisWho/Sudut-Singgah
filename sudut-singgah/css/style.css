@@ -238,7 +238,7 @@ button, a, [role="tab"] {
   text-decoration: none;
 }
 
-.navbar__logo { flex-shrink: 0; }
+.navbar__logo { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
 
 .navbar__brand-text-wrapper {
   display: flex;
@@ -1469,17 +1469,9 @@ button, a, [role="tab"] {
 }
 
 .footer-logo {
-  width: 32px;
-  height: 32px;
-  background: #C8892A;
-  color: #1C1410;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
