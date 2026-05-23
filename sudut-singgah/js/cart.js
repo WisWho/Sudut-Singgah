@@ -170,7 +170,7 @@
         return sum + i.harga * i.jumlah;
       }, 0);
 
-      var waUrl = 'https://wa.me/6285738212143?text=Halo%20Sudut%20Singgah!%20Saya%20mau%20pesan:%0A' +
+      var waUrl = 'https://wa.me/6283132583732?text=Halo%20Sudut%20Singgah!%20Saya%20mau%20pesan:%0A' +
         pesanText + '%0A%0ATotal:%20Rp%20' + total.toLocaleString('id-ID');
 
       window.open(waUrl, '_blank');
