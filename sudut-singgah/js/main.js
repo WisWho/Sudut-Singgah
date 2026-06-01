@@ -142,7 +142,7 @@
 
     // Event section (Swiper + Lightbox)
     if (typeof Swiper !== 'undefined') {
-      new Swiper('.event-swiper', {
+      new Swiper('.collab-swiper', {
         effect: 'cards',
         grabCursor: true,
         cardsEffect: {
@@ -152,14 +152,14 @@
           slideShadows: true,
         },
         navigation: {
-          nextEl: '.event-next',
-          prevEl: '.event-prev',
+          nextEl: '.collab-next',
+          prevEl: '.collab-prev',
         },
       });
     }
 
-    gsap.from('.event-label, .event-title', {
-      scrollTrigger: { trigger: '.event-section', start: 'top 85%' },
+    gsap.from('.collab-label, .collab-title', {
+      scrollTrigger: { trigger: '.collab-section', start: 'top 85%' },
       y: 40,
       opacity: 0,
       duration: 0.8,
@@ -167,8 +167,8 @@
       ease: 'power2.out',
     });
 
-    gsap.from('.event-swiper', {
-      scrollTrigger: { trigger: '.event-section', start: 'top 80%' },
+    gsap.from('.collab-swiper', {
+      scrollTrigger: { trigger: '.collab-section', start: 'top 80%' },
       y: 60,
       opacity: 0,
       duration: 0.8,
@@ -176,8 +176,8 @@
       ease: 'power2.out',
     });
 
-    gsap.from('.event-nav', {
-      scrollTrigger: { trigger: '.event-section', start: 'top 75%' },
+    gsap.from('.collab-nav', {
+      scrollTrigger: { trigger: '.collab-section', start: 'top 75%' },
       y: 20,
       opacity: 0,
       duration: 0.6,
@@ -186,7 +186,7 @@
     });
 
     // Lightbox
-    var lightbox = document.getElementById('event-lightbox');
+    var lightbox = document.getElementById('collab-lightbox');
     var lightboxImg = document.getElementById('lightbox-img');
     var lightboxCaption = document.getElementById('lightbox-caption');
     var lightboxBackdrop = document.getElementById('lightbox-backdrop');
@@ -203,6 +203,10 @@
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
+
+      document.querySelectorAll('.bento-overlay.is-tapped').forEach(function(overlay) {
+        overlay.classList.remove('is-tapped');
+      });
     }
 
     if (lightbox) {
@@ -211,6 +215,13 @@
           var img = card.querySelector('img');
           var caption = card.getAttribute('data-caption') || '';
           if (img) openLightbox(img.src, img.alt, caption);
+        });
+      });
+
+      document.querySelectorAll('.bento-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          var img = item.querySelector('img');
+          if (img) openLightbox(img.src, img.alt, '');
         });
       });
 

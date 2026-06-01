@@ -451,7 +451,7 @@ button, a, [role="tab"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 20% center;
   display: block;
 }
 
@@ -502,6 +502,10 @@ button, a, [role="tab"] {
     inset: 0;
     height: 100%;
     z-index: 0;
+  }
+
+  .hero-image {
+    object-position: 30% center;
   }
   .hero-left {
     position: relative;
@@ -595,6 +599,7 @@ button, a, [role="tab"] {
   display: block;
   position: relative;
   z-index: 2;
+  filter: brightness(0.65);
 }
 
 .about-content {
@@ -683,7 +688,7 @@ button, a, [role="tab"] {
 
 /* Decorative section divider — subtle gold line */
 .menu::before,
-.event-section::before {
+.collab-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -918,10 +923,15 @@ button, a, [role="tab"] {
   grid-row: 1 / 3;
 }
 
+.bento-wide {
+  grid-column: 2 / 4;
+}
+
 .bento-item {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .bento-item img {
@@ -948,13 +958,7 @@ button, a, [role="tab"] {
 }
 
 .bento-overlay span {
-  color: #F5F0E8;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 16px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
 }
 
 .bento-item:hover .bento-overlay,
@@ -962,18 +966,12 @@ button, a, [role="tab"] {
   background: rgba(28, 20, 16, 0.55);
 }
 
-.bento-item:hover .bento-overlay span,
-.bento-overlay.is-tapped span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (max-width: 767px) {
   .gallery-bento {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
-  .bento-large {
+  .bento-large, .bento-wide, .bento-wide-mobile {
     grid-column: 1 / 3;
     grid-row: auto;
     height: 220px;
@@ -986,37 +984,37 @@ button, a, [role="tab"] {
 /* ================================
    8. EVENT SECTION (Polaroid Swiper)
    ================================ */
-.event-section {
+.collab-section {
   background: var(--color-arang);
   position: relative;
   overflow: hidden;
 }
 
-.event-container {
+.collab-container {
   position: relative;
   z-index: 1;
 }
 
-.event-header {
+.collab-header {
   text-align: center;
   margin-bottom: 48px;
 }
 
-.event-label-wrap {
+.collab-label-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   margin-bottom: 16px;
 }
-.event-label-wrap::before,
-.event-label-wrap::after {
+.collab-label-wrap::before,
+.collab-label-wrap::after {
   content: '';
   width: 32px;
   height: 1.5px;
   background: #C8892A;
 }
-.event-label {
+.collab-label {
   font-family: var(--font-body);
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -1024,7 +1022,7 @@ button, a, [role="tab"] {
   color: #C8892A;
 }
 
-.event-title {
+.collab-title {
   font-family: var(--font-body);
   font-size: 42px;
   font-weight: 700;
@@ -1033,7 +1031,7 @@ button, a, [role="tab"] {
 }
 
 /* Swiper container */
-.event-swiper {
+.collab-swiper {
   width: 300px;
   height: auto;
   margin: 0 auto;
@@ -1084,15 +1082,15 @@ button, a, [role="tab"] {
 }
 
 /* Nav buttons */
-.event-nav {
+.collab-nav {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-top: 40px;
 }
 
-.event-prev,
-.event-next {
+.collab-prev,
+.collab-next {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1106,27 +1104,27 @@ button, a, [role="tab"] {
   transition: all 0.3s var(--ease-out);
 }
 
-.event-prev:hover,
-.event-next:hover {
+.collab-prev:hover,
+.collab-next:hover {
   background: rgba(200, 137, 42, 0.15);
   border-color: #C8892A;
 }
 
-.event-prev:active,
-.event-next:active {
+.collab-prev:active,
+.collab-next:active {
   transform: scale(0.92);
 }
 
 /* Watermark */
-.event-deco-text {
+.collab-deco-text {
   position: absolute;
-  bottom: -40px;
+  bottom: -20px;
   right: -20px;
   font-family: var(--font-body);
   font-size: 180px;
   font-weight: 800;
   color: #C8892A;
-  opacity: 0.04;
+  opacity: 0.15;
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -1208,16 +1206,16 @@ button, a, [role="tab"] {
 }
 
 @media (max-width: 767px) {
-  .event-section {
+  .collab-section {
     padding: 80px 24px;
   }
-  .event-title {
+  .collab-title {
     font-size: 32px;
   }
-  .event-swiper {
+  .collab-swiper {
     width: 260px;
   }
-  .event-deco-text {
+  .collab-deco-text {
     font-size: 80px;
     bottom: -20px;
   }
@@ -1935,7 +1933,7 @@ button, a, [role="tab"] {
 
   .gallery__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-  .event-swiper { width: 340px; }
+  .collab-swiper { width: 340px; }
 }
 
 /* Desktop */
@@ -1966,7 +1964,7 @@ button, a, [role="tab"] {
   .gallery__grid { gap: 20px; }
   .gallery__overlay span { font-size: 20px; }
 
-  .event-swiper { width: 380px; }
+  .collab-swiper { width: 380px; }
 
 
   /* Cart drawer from right on desktop */
@@ -2029,5 +2027,12 @@ button, a, [role="tab"] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .collab-deco-text,
+  .lokasi-deco-text {
+    display: none;
   }
 }
