@@ -274,6 +274,7 @@ button, a, [role="tab"] {
   align-items: center;
   justify-content: center;
   z-index: 1001;
+  margin-right: -12px; /* Geser visual icon lebih ke kanan */
 }
 
 .navbar__hamburger-line {
