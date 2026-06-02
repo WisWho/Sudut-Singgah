@@ -11,27 +11,27 @@
   /* --- Data Menu --- */
   var menuData = {
     panasdingin: [
-      { nama: 'Kopi Hitam', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi seduh asli dengan cita rasa pekat dan aroma kuat.', gambar: 'assets/images/menu/kopi-hitam.webp' },
-      { nama: 'Kopi Susu', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Perpaduan kopi dan susu kental manis yang pas.', gambar: 'assets/images/menu/kopi-susu.webp' },
-      { nama: 'Kopi Gula Aren', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Manisnya gula aren asli bercampur dengan kopi.', gambar: 'assets/images/menu/kopi-gula-aren.webp' },
-      { nama: 'White Coffee', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi instan lembut untuk menemani santai.', gambar: 'assets/images/menu/white-coffee.webp' },
-      { nama: 'Cappuccino', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi dengan busa lembut yang menghangatkan.', gambar: 'assets/images/menu/cappucino.webp' },
-      { nama: 'Chocolatos', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Cokelat panas maupun dingin yang selalu jadi andalan.', gambar: 'assets/images/menu/chocolatos.webp' },
-      { nama: 'Milo', hargaPanas: 5000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Minuman cokelat malt khas kesukaan semua.', gambar: 'assets/images/menu/milo.webp' },
-      { nama: 'Susu Jahe', hargaPanas: 4000, hargaDingin: null, tipe: 'panas', deskripsi: 'Kehangatan ekstra dari campuran susu dan jahe asli.', gambar: 'assets/images/menu/susu-jahe.webp' },
-      { nama: 'Susu Hangat', hargaPanas: 4000, hargaDingin: null, tipe: 'panas', deskripsi: 'Susu putih hangat penenang pikiran.', gambar: 'assets/images/menu/susu-hangat.webp' },
-      { nama: 'Joshua', hargaPanas: null, hargaDingin: 5000, tipe: 'dingin', deskripsi: 'Minuman segar dengan campuran rasa spesial.', gambar: 'assets/images/menu/joshua.webp' },
+      { nama: 'Kopi Hitam', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi seduh asli dengan cita rasa pekat dan aroma kuat.', deskripsiEn: 'Traditionally brewed black coffee with a bold flavour and rich aroma.', gambar: 'assets/images/menu/kopi-hitam.webp' },
+      { nama: 'Kopi Susu', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Perpaduan kopi dan susu kental manis yang pas.', deskripsiEn: 'A perfect blend of coffee and sweetened condensed milk.', gambar: 'assets/images/menu/kopi-susu.webp' },
+      { nama: 'Kopi Gula Aren', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Manisnya gula aren asli bercampur dengan kopi.', deskripsiEn: 'The natural sweetness of palm sugar mixed with fresh brewed coffee.', gambar: 'assets/images/menu/kopi-gula-aren.webp' },
+      { nama: 'White Coffee', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi instan lembut untuk menemani santai.', deskripsiEn: 'A smooth and mild instant coffee, perfect for a relaxed moment.', gambar: 'assets/images/menu/white-coffee.webp' },
+      { nama: 'Cappuccino', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Kopi dengan busa lembut yang menghangatkan.', deskripsiEn: 'Rich espresso topped with a cloud of soft, velvety foam.', gambar: 'assets/images/menu/cappucino.webp' },
+      { nama: 'Chocolatos', hargaPanas: 4000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Cokelat panas maupun dingin yang selalu jadi andalan.', deskripsiEn: 'A crowd-favourite chocolate drink, served hot or cold.', gambar: 'assets/images/menu/chocolatos.webp' },
+      { nama: 'Milo', hargaPanas: 5000, hargaDingin: 5000, tipe: 'keduanya', deskripsi: 'Minuman cokelat malt khas kesukaan semua.', deskripsiEn: 'The classic malt chocolate drink loved by everyone.', gambar: 'assets/images/menu/milo.webp' },
+      { nama: 'Susu Jahe', hargaPanas: 4000, hargaDingin: null, tipe: 'panas', deskripsi: 'Kehangatan ekstra dari campuran susu dan jahe asli.', deskripsiEn: 'Extra warmth from a blend of milk and fresh ginger.', gambar: 'assets/images/menu/susu-jahe.webp' },
+      { nama: 'Susu Hangat', hargaPanas: 4000, hargaDingin: null, tipe: 'panas', deskripsi: 'Susu putih hangat penenang pikiran.', deskripsiEn: 'Warm plain milk, simple, comforting, and calming.', gambar: 'assets/images/menu/susu-hangat.webp' },
+      { nama: 'Joshua', hargaPanas: null, hargaDingin: 5000, tipe: 'dingin', deskripsi: 'Minuman segar dengan campuran rasa spesial.', deskripsiEn: 'A refreshing drink with a special blend of flavours.', gambar: 'assets/images/menu/joshua.webp' },
     ],
     tubruk: [
-      { nama: 'Tubruk Arabica', harga: 6000, tipe: 'panas', deskripsi: 'Kopi tubruk khas dengan notes asam Arabica.', gambar: 'assets/images/menu/kopi-tubruk.webp' },
-      { nama: 'Tubruk Robusta', harga: 6000, tipe: 'panas', deskripsi: 'Sensasi kopi tubruk yang tebal dan pekat.', gambar: 'assets/images/menu/kopi-tubruk.webp' },
+      { nama: 'Tubruk Arabica', harga: 6000, tipe: 'panas', deskripsi: 'Kopi tubruk khas dengan notes asam Arabica.', deskripsiEn: 'Classic tubruk coffee featuring the bright, acidic notes of Arabica.', gambar: 'assets/images/menu/kopi-tubruk.webp' },
+      { nama: 'Tubruk Robusta', harga: 6000, tipe: 'panas', deskripsi: 'Sensasi kopi tubruk yang tebal dan pekat.', deskripsiEn: 'Bold and intense tubruk coffee with a strong Robusta body.', gambar: 'assets/images/menu/kopi-tubruk.webp' },
     ],
     spesial: [
-      { nama: 'Taro Singgah', harga: 8000, tipe: 'dingin', deskripsi: 'Minuman manis rasa taro yang creamy.', gambar: 'assets/images/menu/taro-singgah.webp' },
-      { nama: 'Choco Beng', harga: 8000, tipe: 'dingin', deskripsi: 'Kreasi cokelat eksklusif dengan topping renyah.', gambar: 'assets/images/menu/choco-beng.webp' },
-      { nama: 'Miloreo Crunch', harga: 8000, tipe: 'dingin', deskripsi: 'Paduan Milo dan Oreo yang crunchy.', gambar: 'assets/images/menu/miloreo-crunch.webp' },
-      { nama: 'Coffee Latte', harga: 8000, tipe: 'dingin', deskripsi: 'Espresso dengan paduan susu segar yang gurih.', gambar: 'assets/images/menu/coffee-latte.webp' },
-      { nama: 'Aren Coffee', harga: 8000, tipe: 'dingin', deskripsi: 'Racikan andalan es kopi susu gula aren premium.', gambar: 'assets/images/menu/aren-coffee.webp' },
+      { nama: 'Taro Singgah', harga: 8000, tipe: 'dingin', deskripsi: 'Minuman manis rasa taro yang creamy.', deskripsiEn: 'A sweet and creamy taro-flavoured drink.', gambar: 'assets/images/menu/taro-singgah.webp' },
+      { nama: 'Choco Beng', harga: 8000, tipe: 'dingin', deskripsi: 'Kreasi cokelat eksklusif dengan topping renyah.', deskripsiEn: 'An exclusive chocolate creation with a satisfying crunchy topping.', gambar: 'assets/images/menu/choco-beng.webp' },
+      { nama: 'Miloreo Crunch', harga: 8000, tipe: 'dingin', deskripsi: 'Paduan Milo dan Oreo yang crunchy.', deskripsiEn: 'The ultimate combo of Milo and Oreo with an irresistible crunch.', gambar: 'assets/images/menu/miloreo-crunch.webp' },
+      { nama: 'Coffee Latte', harga: 8000, tipe: 'dingin', deskripsi: 'Espresso dengan paduan susu segar yang gurih.', deskripsiEn: 'Smooth espresso paired with rich, fresh milk.', gambar: 'assets/images/menu/coffee-latte.webp' },
+      { nama: 'Aren Coffee', harga: 8000, tipe: 'dingin', deskripsi: 'Racikan andalan es kopi susu gula aren premium.', deskripsiEn: 'Our signature iced coffee with premium palm sugar and fresh milk.', gambar: 'assets/images/menu/aren-coffee.webp' },
     ],
   };
 
@@ -78,9 +78,12 @@
         }
 
         var badgeText = '';
-        if (item.tipe === 'panas') badgeText = 'Panas';
-        else if (item.tipe === 'dingin') badgeText = 'Dingin';
-        else if (item.tipe === 'keduanya') badgeText = 'Panas & Dingin';
+        if (item.tipe === 'panas') badgeText = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Hot' : 'Panas';
+        else if (item.tipe === 'dingin') badgeText = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Cold' : 'Dingin';
+        else if (item.tipe === 'keduanya') badgeText = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Hot & Cold' : 'Panas & Dingin';
+
+        var currentLang = window.i18n ? window.i18n.getCurrent() : 'id';
+        var displayDesc = (currentLang === 'en' && item.deskripsiEn) ? item.deskripsiEn : item.deskripsi;
 
         var currentPrice = item.hargaPanas || item.hargaDingin || item.harga;
         var currentCartName = item.nama;
@@ -92,10 +95,12 @@
 
         var toggleHtml = '';
         if (item.tipe === 'keduanya') {
-          toggleHtml = 
-            '<div class="menu__card-toggle" style="display:flex; gap:8px; margin-bottom:12px;">' +
-              '<button class="menu-toggle-btn is-active" data-type="panas" style="padding:4px 10px; font-size:12px; border-radius:20px; border:1px solid #C8892A; background:#C8892A; color:#1C1410; cursor:pointer; font-weight:600;">Panas</button>' +
-              '<button class="menu-toggle-btn" data-type="dingin" style="padding:4px 10px; font-size:12px; border-radius:20px; border:1px solid #6B4226; background:transparent; color:#D4C5A9; cursor:pointer; font-weight:600;">Dingin</button>' +
+          var labelPanas = currentLang === 'en' ? 'Hot' : 'Panas';
+          var labelDingin = currentLang === 'en' ? 'Cold' : 'Dingin';
+          toggleHtml =
+            '<div class="menu__card-toggle">' +
+              '<button class="menu-toggle-btn is-active" data-type="panas">' + labelPanas + '</button>' +
+              '<button class="menu-toggle-btn" data-type="dingin">' + labelDingin + '</button>' +
             '</div>';
         }
 
@@ -106,7 +111,7 @@
           '</div>' +
           '<div class="menu__card-content">' +
             '<h3 class="menu__card-name">' + item.nama + '</h3>' +
-            '<p class="menu__card-desc">' + item.deskripsi + '</p>' +
+            '<p class="menu__card-desc">' + displayDesc + '</p>' +
             toggleHtml +
             '<div class="menu__card-footer">' +
               '<span class="menu__card-price" id="price-' + index + '">' + formatHarga(currentPrice) + '</span>' +
@@ -126,21 +131,15 @@
           toggleBtns.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
               toggleBtns.forEach(function(b) {
-                b.style.background = 'transparent';
-                b.style.borderColor = '#6B4226';
-                b.style.color = '#D4C5A9';
                 b.classList.remove('is-active');
               });
-              var clicked = e.target;
-              clicked.style.background = '#C8892A';
-              clicked.style.borderColor = '#C8892A';
-              clicked.style.color = '#1C1410';
+              var clicked = e.currentTarget;
               clicked.classList.add('is-active');
-              
+
               var type = clicked.getAttribute('data-type');
               var newPrice = type === 'panas' ? item.hargaPanas : item.hargaDingin;
               var newName = item.nama + ' (' + (type === 'panas' ? 'Panas' : 'Dingin') + ')';
-              
+
               priceEl.textContent = formatHarga(newPrice);
               addBtn.setAttribute('data-harga', newPrice);
               addBtn.setAttribute('data-nama', newName);
@@ -158,7 +157,8 @@
       if (items.length > itemLimit) {
         var btnContainer = document.createElement('div');
         btnContainer.id = 'menu-more-container';
-        btnContainer.innerHTML = '<button class="menu__more-btn" id="menu-more-btn">Selengkapnya <i data-lucide="chevron-down"></i></button>';
+        var labelMore = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Show More' : 'Selengkapnya';
+        btnContainer.innerHTML = '<button class="menu__more-btn" id="menu-more-btn">' + labelMore + ' <i data-lucide="chevron-down"></i></button>';
         menuGrid.parentNode.insertBefore(btnContainer, menuGrid.nextSibling);
         
         if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -173,7 +173,8 @@
           if (isExpanded) {
             // Tampilkan item
             hiddenItems.forEach(function(item) { item.classList.remove('hidden-item'); });
-            btn.innerHTML = 'Lebih Sedikit <i data-lucide="chevron-up"></i>';
+            var labelLess = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Show Less' : 'Lebih Sedikit';
+            btn.innerHTML = labelLess + ' <i data-lucide="chevron-up"></i>';
             if (typeof lucide !== 'undefined') lucide.createIcons();
 
             if (typeof gsap !== 'undefined') {
@@ -203,7 +204,7 @@
             } else {
               hiddenItems.forEach(function(item) { item.classList.add('hidden-item'); });
             }
-            btn.innerHTML = 'Selengkapnya <i data-lucide="chevron-down"></i>';
+            btn.innerHTML = (window.i18n ? window.i18n.getCurrent() : 'id') === 'en' ? 'Show More <i data-lucide="chevron-down"></i>' : 'Selengkapnya <i data-lucide="chevron-down"></i>';
             if (typeof lucide !== 'undefined') lucide.createIcons();
             
             // Scroll otomatis ke bagian menu
@@ -228,6 +229,8 @@
   }
 
   /* --- Tab Click Handler --- */
+  var activeCategory = 'panasdingin';
+
   menuTabs.addEventListener('click', function (e) {
     var tab = e.target.closest('.menu__tab');
     if (!tab) return;
@@ -240,9 +243,15 @@
     tab.classList.add('is-active');
     tab.setAttribute('aria-selected', 'true');
 
-    // Render menu sesuai tab
-    renderMenu(tab.dataset.tab);
+    // Simpan kategori aktif & render
+    activeCategory = tab.dataset.tab;
+    renderMenu(activeCategory);
   });
+
+  /* --- Expose rerenderMenu ke global (dipanggil oleh i18n.js) --- */
+  window.rerenderMenu = function () {
+    renderMenu(activeCategory);
+  };
 
   /* --- Render awal: Hot Menu --- */
   renderMenu('panasdingin');

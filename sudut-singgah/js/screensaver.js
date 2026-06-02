@@ -20,6 +20,13 @@
   var words = ['jeda', 'singgah', 'tenang', 'nikmati'];
   var wordIndex = 0;
 
+  /* --- Expose: ubah kata screensaver dari luar (dipanggil i18n.js) --- */
+  window.updateScreensaverWords = function (newWords) {
+    if (!Array.isArray(newWords) || newWords.length === 0) return;
+    words = newWords;
+    wordIndex = 0;
+  };
+
   /* --- Aktivasi Screensaver --- */
   function activate() {
     if (isActive) return;

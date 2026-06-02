@@ -65,11 +65,17 @@
     cartFooter.style.display = 'flex';
 
     cart.forEach(function (item, index) {
+      var currentLang = window.i18n ? window.i18n.getCurrent() : 'id';
+      var displayNama = item.nama;
+      if (currentLang === 'en') {
+        displayNama = displayNama.replace('(Panas)', '(Hot)').replace('(Dingin)', '(Cold)');
+      }
+
       var el = document.createElement('div');
       el.className = 'cart-item';
       el.innerHTML =
         '<div class="cart-item__info">' +
-          '<div class="cart-item__name">' + item.nama + '</div>' +
+          '<div class="cart-item__name">' + displayNama + '</div>' +
           '<div class="cart-item__price">' + formatHarga(item.harga) + '</div>' +
         '</div>' +
         '<div class="cart-item__controls">' +
@@ -188,4 +194,6 @@
 
   // Render awal
   renderCart();
+
+  window.rerenderCart = renderCart;
 })();
