@@ -87,7 +87,7 @@
     /* --- Scroll Animations --- */
 
     // About section
-    gsap.from('.about__image-wrapper', {
+    gsap.from('.about-image-wrapper', {
       scrollTrigger: { trigger: '.about', start: 'top 85%' },
       x: -40,
       opacity: 0,
@@ -95,8 +95,8 @@
       ease: 'power2.out',
     });
 
-    gsap.from('.about__text .section__label, .about__text .section__title, .about__text .about__desc', {
-      scrollTrigger: { trigger: '.about__text', start: 'top 85%' },
+    gsap.from('.about-content .about-label, .about-content .about-title, .about-content .about-desc', {
+      scrollTrigger: { trigger: '.about-content', start: 'top 85%' },
       y: 40,
       opacity: 0,
       duration: 0.8,
@@ -131,8 +131,8 @@
       ease: 'power2.out',
     });
 
-    gsap.from('.gallery__item', {
-      scrollTrigger: { trigger: '.gallery__grid', start: 'top 85%' },
+    gsap.from('.bento-item', {
+      scrollTrigger: { trigger: '.gallery-bento', start: 'top 85%' },
       y: 40,
       opacity: 0,
       duration: 0.6,
@@ -236,8 +236,8 @@
     }
 
     // Location section
-    gsap.from('.location__title, .location__map, .location__info', {
-      scrollTrigger: { trigger: '.location', start: 'top 85%' },
+    gsap.from('.lokasi-title, .lokasi-map-wrapper, .lokasi-right', {
+      scrollTrigger: { trigger: '.lokasi-section', start: 'top 85%' },
       y: 40,
       opacity: 0,
       duration: 0.8,
@@ -246,7 +246,7 @@
     });
 
     // Footer
-    gsap.from('.footer__brand, .footer__socials, .footer__copy', {
+    gsap.from('.footer-brand, .footer-socials, .footer-bottom', {
       scrollTrigger: { trigger: '.footer', start: 'top 90%' },
       y: 30,
       opacity: 0,
